@@ -1,12 +1,12 @@
 # Lead Management System Backend
 
-A Node.js/TypeScript backend for managing leads, built with Express.js e banco de dados flexível (SQLite por padrão, SQL Server opcional).
+A Node.js/TypeScript backend for managing leads, built with Express.js and a flexible database (SQLite by default, SQL Server optional).
 
 ## Features
 
 - RESTful API for lead management
-- SQLite database (default, zero config) ou SQL Server (opcional)
-- Email notifications for accepted leads
+- SQLite database (default, zero config) or SQL Server (optional)
+- Email notifications for accepted leads (simulated via .txt file)
 - Automatic price discount for leads over $500
 - Clean Architecture with DDD principles
 - TypeScript for type safety
@@ -15,24 +15,26 @@ A Node.js/TypeScript backend for managing leads, built with Express.js e banco d
 
 ## Prerequisites
 
-- Node.js (v14 ou superior)
-- npm ou yarn
-- (Opcional) SQL Server instalado, se quiser rodar com SQL Server
+- Node.js (v18 or higher)
+- npm or yarn
+- (Optional) SQL Server installed, if you want to run with SQL Server
 
 ## Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 ```bash
 git clone <repository-url>
 cd backend-lead-management
 ```
 
-2. Instale as dependências:
+2. Install dependencies:
 ```bash
 yarn
+# or
+npm install
 ```
 
-3. Crie um arquivo `.env` na raiz do projeto. Exemplo para rodar com SQLite (recomendado para desenvolvimento):
+3. Create a `.env` file in the project root. Example for running with SQLite (recommended for development):
 ```env
 # Server Configuration
 PORT=3000
@@ -50,7 +52,7 @@ SMTP_PASS=your-password
 SALES_EMAIL=sales@test.com
 ```
 
-Se quiser rodar com SQL Server, use este exemplo:
+If you want to run with SQL Server, use this example:
 ```env
 # Server Configuration
 PORT=3000
@@ -72,28 +74,39 @@ SMTP_PASS=your-password
 SALES_EMAIL=sales@test.com
 ```
 
-4. (Opcional) Se for usar SQL Server, crie o banco de dados manualmente:
+4. (Optional) If using SQL Server, create the database manually:
 ```sql
 CREATE DATABASE lead_management;
 ```
 
-## Rodando a aplicação
+## Running the Application
 
-1. Modo desenvolvimento (SQLite ou SQL Server):
+1. Development mode (SQLite or SQL Server):
 ```bash
 yarn dev
+# or
+npm run dev
 ```
 
-2. Modo produção:
+2. Production mode:
 ```bash
 yarn build
 yarn start
+# or
+npm run build
+npm start
 ```
 
-## Observações
-- Por padrão, o projeto roda com SQLite, sem necessidade de instalar ou configurar banco de dados.
-- Para usar SQL Server, basta ajustar as variáveis de ambiente.
-- O arquivo do banco SQLite será criado automaticamente na primeira execução.
+## Email Simulation
+
+Whenever a lead is accepted, instead of sending a real email, the system simulates the email by creating a `.txt` file in the `emails/` folder at the project root. Each file contains the recipient, subject, and content of the email that would have been sent. The filename includes the lead ID and a timestamp for easy identification.
+
+This allows you to verify that the email notification logic is working, without needing a real SMTP server or sending actual emails.
+
+## Notes
+- By default, the project runs with SQLite, with no need to install or configure a database.
+- To use SQL Server, just adjust the environment variables.
+- The SQLite database file will be created automatically on first run.
 
 ## API Endpoints
 
@@ -126,6 +139,8 @@ src/
 Run the test suite:
 ```bash
 yarn test
+# or
+npm test
 ```
 
 ## Contributing
