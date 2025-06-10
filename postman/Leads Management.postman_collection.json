@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "1eaa7e01-66f5-4a0a-b8a6-01ab4bd6592f",
+		"name": "Leads Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2905342"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"João\",\n    \"lastName\": \"Silva\",\n    \"suburb\": \"São Paulo\",\n    \"category\": \"Pintura\",\n    \"description\": \"Preciso pintar 2 janelas de alumínio\",\n    \"price\": 450,\n    \"status\": \"invited\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/leads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/leads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Invited",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/leads/status/invited",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads",
+						"status",
+						"invited"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/leads/32f83bca-35ca-4af1-8f1f-ef007fa9d7cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads",
+						"32f83bca-35ca-4af1-8f1f-ef007fa9d7cd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/leads/32f83bca-35ca-4af1-8f1f-ef007fa9d7cd/accept",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads",
+						"32f83bca-35ca-4af1-8f1f-ef007fa9d7cd",
+						"accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decline",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/leads/32f83bca-35ca-4af1-8f1f-ef007fa9d7cd/decline",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads",
+						"32f83bca-35ca-4af1-8f1f-ef007fa9d7cd",
+						"decline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Lead",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 550,\n    \"description\": \"Descrição atualizada\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/leads/32f83bca-35ca-4af1-8f1f-ef007fa9d7cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads",
+						"32f83bca-35ca-4af1-8f1f-ef007fa9d7cd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Lead",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/leads/32f83bca-35ca-4af1-8f1f-ef007fa9d7cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads",
+						"32f83bca-35ca-4af1-8f1f-ef007fa9d7cd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Lead > 500",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Maria\",\n    \"lastName\": \"Santos\",\n    \"suburb\": \"Rio de Janeiro\",\n    \"category\": \"Reforma\",\n    \"description\": \"Reforma completa de apartamento\",\n    \"price\": 600,\n    \"status\": \"invited\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/leads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leads"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
