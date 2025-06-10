@@ -121,6 +121,23 @@ This allows you to verify that the email notification logic is working, without 
 - `PUT /api/leads/:id` - Update a lead
 - `DELETE /api/leads/:id` - Delete a lead
 
+## Postman Collection
+
+A Postman collection is included in the `postman/` directory to help you test the API endpoints. The collection includes all available endpoints with example requests and environment variables.
+
+To use the collection:
+
+1. Open Postman
+2. Import the collection file from `postman/lead-management-api.postman_collection.json`
+3. (Optional) Import the environment file from `postman/lead-management-api.postman_environment.json`
+4. Start making requests!
+
+The collection includes:
+- All API endpoints documented above
+- Example request bodies
+- Environment variables for easy configuration
+- Tests for successful responses
+
 ## Project Structure
 
 ```
