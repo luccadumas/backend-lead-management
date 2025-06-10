@@ -18,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"João\",\n    \"lastName\": \"Silva\",\n    \"phone\": \"41988029913\",\n    \"email\": \"lucca.ribeiro0@hotmail.com\",\n    \"suburb\": \"São Paulo\",\n    \"category\": \"Pintura\",\n    \"description\": \"Preciso pintar 2 janelas de alumínio\",\n    \"price\": 450,\n    \"status\": \"invited\"\n}"
+					"raw": "{\n    \"firstName\": \"João\",\n    \"lastName\": \"Silva\",\n    \"phone\": \"41988002200\",\n    \"email\": \"teste@hotmail.com\",\n    \"suburb\": \"São Paulo\",\n    \"category\": \"Pintura\",\n    \"description\": \"Preciso pintar 2 janelas de alumínio\",\n    \"price\": 450,\n    \"status\": \"invited\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/api/leads",
@@ -205,7 +205,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Maria\",\n    \"lastName\": \"Santos\",\n    \"suburb\": \"Rio de Janeiro\",\n    \"category\": \"Reforma\",\n    \"description\": \"Reforma completa de apartamento\",\n    \"price\": 600,\n    \"status\": \"invited\"\n}"
+					"raw": "{\n    \"firstName\": \"Maria Lucca\",\n    \"lastName\": \"Santos\",\n    \"phone\": \"41988002200\",\n    \"email\": \"teste@hotmail.com\",\n    \"suburb\": \"Rio de Janeiro\",\n    \"category\": \"Reforma\",\n    \"description\": \"Lead > 500\",\n    \"price\": 600,\n    \"status\": \"invited\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/api/leads",
