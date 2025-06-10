@@ -11,11 +11,20 @@ export class LeadRepository implements ILeadRepository {
   }
 
   async findAll(): Promise<Lead[]> {
-    return this.repository.find();
+    return this.repository.find({
+      order: {
+        createdAt: 'DESC'
+      }
+    });
   }
 
   async findByStatus(status: LeadStatus): Promise<Lead[]> {
-    return this.repository.find({ where: { status } });
+    return this.repository.find({ 
+      where: { status },
+      order: {
+        createdAt: 'DESC'
+      }
+    });
   }
 
   async findById(id: string): Promise<Lead | null> {

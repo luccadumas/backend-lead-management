@@ -18,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"João\",\n    \"lastName\": \"Silva\",\n    \"suburb\": \"São Paulo\",\n    \"category\": \"Pintura\",\n    \"description\": \"Preciso pintar 2 janelas de alumínio\",\n    \"price\": 450,\n    \"status\": \"invited\"\n}"
+					"raw": "{\n    \"firstName\": \"João\",\n    \"lastName\": \"Silva\",\n    \"phone\": \"41988029913\",\n    \"email\": \"lucca.ribeiro0@hotmail.com\",\n    \"suburb\": \"São Paulo\",\n    \"category\": \"Pintura\",\n    \"description\": \"Preciso pintar 2 janelas de alumínio\",\n    \"price\": 450,\n    \"status\": \"invited\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/api/leads",
@@ -104,7 +104,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/leads/32f83bca-35ca-4af1-8f1f-ef007fa9d7cd/accept",
+					"raw": "http://localhost:3000/api/leads/46cf0a8f-be71-4745-bd61-53e4c773fc16/accept",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -113,7 +113,7 @@
 					"path": [
 						"api",
 						"leads",
-						"32f83bca-35ca-4af1-8f1f-ef007fa9d7cd",
+						"46cf0a8f-be71-4745-bd61-53e4c773fc16",
 						"accept"
 					]
 				}
