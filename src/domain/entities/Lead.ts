@@ -11,6 +11,9 @@ export class Lead {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column({ unique: true, nullable: false })
+  jobId: number;
+
   @Column()
   firstName: string;
 

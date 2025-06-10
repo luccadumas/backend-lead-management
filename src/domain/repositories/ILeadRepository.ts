@@ -7,4 +7,5 @@ export interface ILeadRepository {
   save(lead: Lead): Promise<Lead>;
   update(id: string, lead: Partial<Lead>): Promise<Lead | null>;
   delete(id: string): Promise<void>;
+  findLastJobId(): Promise<Lead | null>;
 } 

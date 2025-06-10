@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/api', leadRoutes);
 
 // Error handling middleware
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: Error, _req: express.Request, res: express.Response) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
 });
