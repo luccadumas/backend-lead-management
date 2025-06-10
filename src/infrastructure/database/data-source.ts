@@ -3,12 +3,12 @@ import { Lead } from '../../domain/entities/Lead';
 import dotenv from 'dotenv';
 
 if (process.env.NODE_ENV === 'development') {
-  dotenv.config({ path: '.env.develop' });
+  dotenv.config({ path: '.env.development' });
 } else {
   dotenv.config();
 }
 
-const isSQLite = process.env.DB_TYPE === 'sqlite';
+const isSQLite = process.env.DB_TYPE === 'sqlite' || process.env.NODE_ENV === 'development';
 
 export const AppDataSource = new DataSource(
   isSQLite

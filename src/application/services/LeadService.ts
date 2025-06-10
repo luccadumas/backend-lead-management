@@ -48,6 +48,10 @@ export class LeadService {
   async createLead(leadData: Partial<Lead>): Promise<Lead> {
     const lead = new Lead();
     Object.assign(lead, leadData);
+
+    const lastLead = await this.leadRepository.findLastJobId();
+    lead.jobId = lastLead ? lastLead.jobId + 1 : 1;
+
     return this.leadRepository.save(lead);
   }
 

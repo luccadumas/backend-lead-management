@@ -34,4 +34,11 @@ export class LeadRepository implements ILeadRepository {
   async delete(id: string): Promise<void> {
     await this.repository.delete(id);
   }
+
+  async findLastJobId(): Promise<Lead | null> {
+    return this.repository
+      .createQueryBuilder('lead')
+      .orderBy('lead.jobId', 'DESC')
+      .getOne();
+  }
 } 
