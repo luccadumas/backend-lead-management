@@ -6,7 +6,7 @@ A Node.js/TypeScript backend for managing leads, built with Express.js and a fle
 
 - RESTful API for lead management
 - SQLite database (default, zero config) or SQL Server (optional)
-- Email notifications for accepted leads
+- Email notifications for accepted leads (simulated via .txt file)
 - Automatic price discount for leads over $500
 - Clean Architecture with DDD principles
 - TypeScript for type safety
@@ -96,6 +96,12 @@ yarn start
 npm run build
 npm start
 ```
+
+## Email Simulation
+
+Whenever a lead is accepted, instead of sending a real email, the system simulates the email by creating a `.txt` file in the `emails/` folder at the project root. Each file contains the recipient, subject, and content of the email that would have been sent. The filename includes the lead ID and a timestamp for easy identification.
+
+This allows you to verify that the email notification logic is working, without needing a real SMTP server or sending actual emails.
 
 ## Notes
 - By default, the project runs with SQLite, with no need to install or configure a database.
