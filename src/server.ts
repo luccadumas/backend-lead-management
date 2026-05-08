@@ -8,21 +8,17 @@ import leadRoutes from './presentation/routes/leadRoutes';
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
-// Routes
 app.use('/api', leadRoutes);
 
-// Error handling middleware
-app.use((err: Error, _req: express.Request, res: express.Response) => {
+app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
 });
 
-// Initialize database connection and start server
 AppDataSource.initialize()
   .then(() => {
     console.log('Database connection established');
